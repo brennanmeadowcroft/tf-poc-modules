@@ -15,11 +15,11 @@ resource "aws_lambda_function" "handler" {
   runtime = "nodejs10.x"
   role    = data.aws_ssm_parameter.lambda-exec-role.value
 
-  environment {
-    variables = {
-      BASEURL = data.aws_ssm_parameter.internal_app_baseurl.value
-    }
-  }
+  # environment {
+  #   variables = {
+  #     BASEURL = data.aws_ssm_parameter.internal_app_baseurl.value
+  #   }
+  # }
 }
 
 resource "aws_lambda_permission" "apigw" {
