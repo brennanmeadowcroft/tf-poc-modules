@@ -17,4 +17,7 @@ variable "PATH_TO_ARTIFACT" {
 
 variable "ENVIRONMENT_VARS" {
   description = "Environment variables to pass into Lambda function"
+  default = {
+    placeholder = "true" # Lambda environment block requires at least one item
+  }
 }
