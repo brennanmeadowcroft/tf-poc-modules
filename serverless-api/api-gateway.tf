@@ -56,10 +56,10 @@ resource "aws_api_gateway_deployment" "deployment" {
 resource "aws_ssm_parameter" "endpoint-url" {
   name  = "${var.APP_NAME}-${var.ENV}-endpoint-url"
   type  = "String"
-  value = aws_api_gateway_deployment.api.invoke_url
+  value = aws_api_gateway_deployment.deployment.invoke_url
 }
 
 output "base_url" {
-  value = aws_api_gateway_deployment.api.invoke_url
+  value = aws_api_gateway_deployment.deployment.invoke_url
 }
 
